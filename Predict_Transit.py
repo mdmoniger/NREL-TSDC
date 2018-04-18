@@ -31,6 +31,7 @@ class predict_transit:
         dict_transit = dict((key, 1) for key in range(15,30))
         mode_dict = {**dict_not_transit, **dict_transit}
         ymap = y.map(mode_dict)
+        X, ymap = SMOTEENN().fit_sample(X, ymap)
         X_train, X_test, y_train, y_test = train_test_split(X, ymap)
     def predict_transit(self, df, model):
         model.fit(X_train, y_train)
