@@ -1,0 +1,130 @@
+------------------------------
+------------------------------
+------------------------------
+GradientBoostingClassifier(criterion='friedman_mse', init=None,
+              learning_rate=0.1, loss='deviance', max_depth=3,
+              max_features=None, max_leaf_nodes=None,
+              min_impurity_decrease=0.0, min_impurity_split=None,
+              min_samples_leaf=1, min_samples_split=2,
+              min_weight_fraction_leaf=0.0, n_estimators=100,
+              presort='auto', random_state=None, subsample=1.0, verbose=0,
+              warm_start=False)
+	------------------------------
+	Recall score: 0.32486221677893445
+	------------------------------
+	Most important features:
+
+	act_dur: 0.39
+	trip_distance_miles: 0.20
+	prev_trip_duration_min: 0.17
+	air_trip_distance_miles: 0.12
+	arr_time: 0.06
+	dep_time: 0.06
+	act_cnt: 0.00
+	tract_id: 0.00
+------------------------------
+------------------------------
+------------------------------
+AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None)
+	------------------------------
+	Recall score: 0.2807715860379669
+	------------------------------
+	Most important features:
+
+	act_dur: 0.48
+	prev_trip_duration_min: 0.20
+	trip_distance_miles: 0.10
+	air_trip_distance_miles: 0.10
+	arr_time: 0.08
+	dep_time: 0.04
+	tract_id: 0.00
+	act_cnt: 0.00
+------------------------------
+------------------------------
+------------------------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)
+	------------------------------
+	Recall score: 0.436313533374158
+	------------------------------
+	Most important features:
+
+	act_dur: 0.27
+	air_trip_distance_miles: 0.24
+	trip_distance_miles: 0.24
+	prev_trip_duration_min: 0.13
+	dep_time: 0.06
+	arr_time: 0.05
+	act_cnt: 0.01
+	tract_id: 0.00
+------------------------------
+------------------------------
+------------------------------
+GradientBoostingClassifier(criterion='friedman_mse', init=None,
+              learning_rate=0.1, loss='deviance', max_depth=3,
+              max_features=None, max_leaf_nodes=None,
+              min_impurity_decrease=0.0, min_impurity_split=None,
+              min_samples_leaf=1, min_samples_split=2,
+              min_weight_fraction_leaf=0.0, n_estimators=100,
+              presort='auto', random_state=None, subsample=1.0, verbose=0,
+              warm_start=False)
+	------------------------------
+	Recall score: 0.32486221677893445
+	------------------------------
+	Most important features:
+
+	act_dur: 0.39
+	trip_distance_miles: 0.20
+	prev_trip_duration_min: 0.17
+	air_trip_distance_miles: 0.12
+	arr_time: 0.06
+	dep_time: 0.06
+	act_cnt: 0.00
+	tract_id: 0.00
+------------------------------
+------------------------------
+------------------------------
+AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None)
+	------------------------------
+	Recall score: 0.2807715860379669
+	------------------------------
+	Most important features:
+
+	act_dur: 0.48
+	prev_trip_duration_min: 0.20
+	trip_distance_miles: 0.10
+	air_trip_distance_miles: 0.10
+	arr_time: 0.08
+	dep_time: 0.04
+	tract_id: 0.00
+	act_cnt: 0.00
+------------------------------
+------------------------------
+------------------------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)
+	------------------------------
+	Recall score: 0.4320269442743417
+	------------------------------
+	Most important features:
+
+	act_dur: 0.29
+	trip_distance_miles: 0.24
+	air_trip_distance_miles: 0.24
+	prev_trip_duration_min: 0.12
+	dep_time: 0.06
+	arr_time: 0.05
+	act_cnt: 0.01
+	tract_id: 0.00
