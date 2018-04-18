@@ -5,6 +5,7 @@ from sklearn.ensemble import GradientBoostingClassifier, AdaBoostClassifier, Ran
 from sklearn.metrics import recall_score, precision_score, confusion_matrix
 from sklearn.pipeline import Pipeline
 import pickle
+from imblearn import SMOTEENN
 
 class predict_transit:
     def __init__(self, df):
@@ -25,12 +26,14 @@ class predict_transit:
     def map_and_split(self, df):
         X = df[features]
         y = df[target]
+        X, y = SMOTEENN().fit_sample(X, y)
         dict_not_transit = dict((key, 0) for key in range(15))
         dict_transit = dict((key, 1) for key in range(15,30))
         mode_dict = {**dict_not_transit, **dict_transit}
         ymap = y.map(mode_dict)
         X_train, X_test, y_train, y_test = train_test_split(X, ymap)
     def predict_transit(self, df, model):
+        model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
         return precision_score(y_test, y_pred), recall_score(y_test, y_pred)
 
