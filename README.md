@@ -1,13 +1,13 @@
 ![](/src/logo_nrel.jpg)
 # Predicting Public Transportation
 
-### Can a machine-learning model predict whether a given trip will be serviced by public transit?
+### Can a machine learning model predict whether a given trip will be serviced by public transit?
 ### If so, which features most strongly contribute to the prediction?
 
 ## Data:
 The National Renewable Energy Laboratory Transportation Secure Data Center data can be found [here](https://www.nrel.gov/transportation/secure-transportation-data/tsdc-cleansed-data.html)
 
-These datasets consist of travel surveys distributed by several states and collected by NREL. For the preliminary research, I will use the California Household Travel Survey (CHTS) before scaling up to combine all of the state surveys.
+These datasets consist of travel surveys distributed by several states and collected by NREL. For the preliminary research, I will use the California Household Travel Survey (CHTS) before scaling up to combine surveys from all states.
 
 ## EDA:
 There are thirty different transportation modes (plus two 'unknown' categories), of which fifteen indicate public transit. These were encoded into binary categories with '1' indicating public transit.
@@ -35,8 +35,15 @@ Over-/under-sample: SMOTEENN
 
 AdaBoostClassifier(learning_rate=1, n_estimators=500)
 ![](src/adaboostresults.png)
+![](src/ada_importances.png)
 
-##### Citations:
+## Future Considerations:
+
+1. Feature engineering: departure time – arrival time = time spent at location.
+2. Scale up to national datasets.
+3. Incorporate latitude and longitude data.
+
+##### Citation:
 https://github.com/scikit-learn-contrib/imbalanced-learn
 
 Transportation Secure Data Center." (2017). National Renewable Energy Laboratory. www.nrel.gov/tsdc.
