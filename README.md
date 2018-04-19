@@ -21,6 +21,9 @@ In nearly 24% of the records, transportation mode is missing; as these records a
 ![](src/heatmap.png)
 
 ### Imbalanced Classes (~3% transit)
+
+![](src/meta-chart.png)
+
 Over-/under-sample: SMOTEENN
 
 ## Preliminary Results:
