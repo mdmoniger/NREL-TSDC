@@ -105,11 +105,4 @@ venv.bak/
 
 #data
 .csv
-arc_full_survey/
-caltrans_full_survey/
-dvrpc_full_survey/
-mccog_14_full_survey/
-metc_full_survey/
-mrcog_full_survey/
-rtcsnv_full_survey/
-scag_full_survey/
+data/
