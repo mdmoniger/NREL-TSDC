@@ -31,6 +31,10 @@ Over-/under-sample: SMOTEENN
 ![](src/preresults1.png)
 ![](src/preresults2.png)
 
+## Improved Results:
+
+AdaBoostClassifier(learning_rate=1, n_estimators=500)
+![](src/adaboostresults.png)
 
 ##### Citations:
 https://github.com/scikit-learn-contrib/imbalanced-learn
