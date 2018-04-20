@@ -38,7 +38,9 @@ Over-/under-sample: SMOTEENN
 
 AdaBoostClassifier(learning_rate=1, n_estimators=500)
 
-![](src/adaboostresults.png)
+![](src/post-results.png)
+
+Most import features from AdaBoost:
 
 ![](src/ada_importances.png)
 
