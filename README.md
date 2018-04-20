@@ -20,7 +20,7 @@ In nearly 24% of the records, transportation mode is missing; as these records a
 
 ![](src/perc_missing.png)
 
-### Imbalanced Classes (~3% transit)
+### Imbalanced Classes (<4% transit)
 
 ![](src/meta-chart.png)
 
