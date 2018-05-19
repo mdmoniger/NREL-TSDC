@@ -50,3 +50,6 @@ if __name__ == "__main__":
     features = ['arr_time', 'dep_time', 'trip_distance_miles', 'air_trip_distance_miles', 'prev_trip_duration_min', 'act_dur', 'act_cnt', 'state_id']
     with open('gbc.pkl', 'rb') as file:
         model = pickle.load(file)
+    clean_data(df)
+    map_and_split(df)
+    prec, rec = predict_transit(df, model)
