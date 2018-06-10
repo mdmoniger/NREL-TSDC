@@ -15,7 +15,6 @@ class gridsrch():
         X_train, X_test, y_train, y_test = train_test_split(self.X, self.y)
         # if model == 'rfc':
         rfc = RandomForestClassifier()
-        print('gridsearching rfc')
         rfcgrid = GridSearchCV(rfc, param_grid={
                 'n_estimators':[10, 50, 100, 200, 500],
                 'max_features':[None, 1, 2, 3, 4, 5, 6, 7, 8],
@@ -23,38 +22,37 @@ class gridsrch():
                 'class_weight':[None, 'balanced_subsample', 'balanced']},
                 scoring='f1', n_jobs=-1, refit=True)
         print('fitting rfc')
-        rfcgrid.fit(X_train, y_train)
+        rfc = rfcgrid.fit(X_train, y_train)
         rfcbestpars = rfcgrid.best_params_
         print('pickling rfc')
-        pickle.dump(rfcgrid, open('rfc.pkl', 'wb'))
+        pickle.dump(rfc, open('rfc.pkl', 'wb'))
         pickle.dump(rfcbestpars, open('rfcbestpars', 'wb'))
         # if model == 'abc':
         abc = AdaBoostClassifier()
-        print('gridsearching abc')
         abcgrid = GridSearchCV(abc, param_grid={
                 'n_estimators':[10, 50, 75, 100, 150, 200, 500],
                 'learning_rate':[.01, .05, .1, 0.5, 1, 2]},
                 scoring='f1', n_jobs=-1, refit=True)
-        print('gridsearching abc')
-        abcgrid.fit(X_train, y_train)
+        print('fitting abc')
+        abc = abcgrid.fit(X_train, y_train)
         abcbestpars = abcgrid.best_params_
         print('pickling abc')
-        pickle.dump(abcgrid, open('abc.pkl', 'wb'))
+        pickle.dump(abc, open('abc.pkl', 'wb'))
         pickle.dump(abcbestpars, open('abcbestpars', 'wb'))
         # if model == 'gbc':
         gbc = GradientBoostingClassifier()
-        print('gridsearching gbc')
         gbcgrid = GridSearchCV(gbc, param_grid=
                 {'n_estimators':[50, 75, 100, 150, 200, 500],
                 'max_depth':[None, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20],
                 'learning_rate':[.01, .05, .1, 0.5, 1, 2]},
                 scoring='f1', n_jobs=-1, refit=True)
-        print('gridsearching gbc')
-        gbcgrid.fit(X_train, y_train)
+        print('fitting gbc')
+        gbc = gbcgrid.fit(X_train, y_train)
         gbcbestpars = gbcgrid.best_params_
         print('pickling gbc')
-        pickle.dump(gbcgrid, open('gbc.pkl', 'wb'))
+        pickle.dump(gbc, open('gbc.pkl', 'wb'))
         pickle.dump(gbcbestpars, open('gbcbestpars', 'wb'))
+        return gbc, abc, rfc, rfcbestpars, gbcbestpars, abcbestpars
 
 
 if __name__ == "__main__":
