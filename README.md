@@ -12,11 +12,11 @@ These datasets consist of travel surveys distributed by several states and colle
 ![](images/features.png)
 
 ## EDA:
-There are thirty different transportation modes (plus two 'unknown' categories), of which fifteen indicate public transit. These were converted into binary categories with '1' indicating public transit.
+There are thirty different transportation modes (plus two 'unknown' categories), of which fifteen indicate public transit. These were binarized with '1' indicating public transit and '0' indicating other modes of travel.
 
 ![](images/modes.png)
 
-In nearly 24% of the records, transportation mode is missing; as these records are not useful for modeling, they were dropped.
+In nearly 24% of the records, mode of transportation is missing. Ideally, I would impute the data in this column using indicative features; however, the overlap of missing data between columns makes this impractical. As such, these records are not useful for modeling, and they were dropped.
 
 ![](images/perc_missing.png)
 
@@ -24,15 +24,19 @@ In nearly 24% of the records, transportation mode is missing; as these records a
 
 ![](images/meta-chart.png)
 
-Over-/under-sample: SMOTEENN
+To correct for a massive class imbalance, which could likely cause issues with the predictive model, I used SMOTEENN: a combination of oversampling (Synthetic Minority Oversampling TEchnique) and undersampling (Edited Nearest Neighbors).
 
 ## Preliminary Results:
+
+The results from each model out-of-the-box. Note that as goals shifted throughout the project, the scoring metric shifts from recall to F1 score (which equally balances recall and precision).
 
 ![](images/preresults1.png)
 
 ![](images/preresults2.png)
 
 ## Improved Results:
+
+After grid-searching the models on AWS, F1 score (and thus recall) is vastly improved:
 
 AdaBoostClassifier(learning_rate=1, n_estimators=500)
 
